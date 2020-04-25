@@ -1,55 +1,69 @@
 <template>
-  <div>
+  <div class="element-content">
+    <header>
+      <nav class="nav-group">
+        <ul class="nav-list">
+          <li><van-icon name="arrow-left" size="18"/></li>
+          <li><van-icon name="search" color="#333" size="14" class="search-icons"/><input type="text" class="from-item" placeholder="景点/目的地/主题"></li>
+          <li>北京<van-icon name="arrow-down" size="18"/></li>
+        </ul>
+      </nav>
+    </header>
     <nuxt />
   </div>
 </template>
+<script>
+import { NavBar, Icon } from 'vant';
+export default {
+  data() {
+    return {
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+    }
+  },
+  components: {
+    [NavBar.name]: NavBar,
+    [Icon.name]: Icon
+  },
+  methods: {
+    onClickLeft() {},
+  }
+}
+</script>
+<style scoped>
+.nav-group{
+  position:fixed;
+  z-index: 2;
+  width: 100%;
   box-sizing: border-box;
+  background: #fff;
 }
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+.nav-list{
+  display: flex;
+  align-items: center;
+  height: 47px;
+  justify-content: space-between;
+  border-bottom: solid 1px #ebedf0;
+  font-size: 14px;
+  padding: 0 10px;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.nav-list li{
+  color: #616161;
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.nav-list .from-item{
+  background: #f2f2f2;
+  border-radius: 22px;
+  min-width: 265px;
+  border: none;
+  text-indent: 28px;
+  height: 30px;
+  font-size: 12px;
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.nav-list li >>> .van-icon-arrow-down{
+  vertical-align: text-bottom;
 }
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.search-icons{
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 12px;
 }
 </style>
