@@ -18,7 +18,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: 'red' },
   /*
   ** Global CSS
   */
@@ -41,7 +41,23 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+  axios: {
+    proxy: true,
+    credentials: true,
+    prefix: '/'
+  },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8000/',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': ''
+      }
+    } 
+  },
   /*
   ** Build configuration
   */

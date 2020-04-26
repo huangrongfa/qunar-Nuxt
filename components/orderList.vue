@@ -28,6 +28,10 @@ export default {
     measg: {
       default: "",
       type: String
+    },
+    goods: {
+      type: Array,
+      default: null
     }
   },
   created() {},
@@ -53,6 +57,7 @@ export default {
   font-size: 14px;
   color: #212121;
   margin-bottom: 6px;
+  flex: 1;
 }
 .adress{
   color: #9e9e9e;
