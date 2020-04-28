@@ -14,7 +14,7 @@ app.use(router.allowedMethods());
 
 router.get('/api/goods', async(ctx) => {
   ctx.body = {
-    title: '<高效能人士的七个习惯>人际关系的本质',
+    title: '就业怎么保？脱贫摘帽是新生活新奋斗的起点',
     age: 30,
     status: 200
   }
